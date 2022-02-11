@@ -20,10 +20,12 @@ export default async (req: NextApiRequest, res:NextApiResponse) => {
 
         case "Delete":
             try {
-                const text="Delete from Construccion where id=$1";
+                const text="Delete from Construccion where id=$1 returning *";
                 const values = [query.id];
                 const result =await conexion.query(text, values);
-                console.log(result)
+                console.log(result);
+                if (result.rowCount == 0)
+                    return res.status(404).json({message: "No encontrado"})
                 return res.json('deleting')
             } catch (error: any) {
                 return res.status(500).json({message: error.message});
