@@ -1,14 +1,14 @@
 import {Pool} from 'pg';
 
-let coneccion: any;
-if(!coneccion){
+let conexion: any;
+if(!conexion){
 
-new Pool({
+conexion=new Pool({
     user: 'postgres',
     password: 'Davidfer44',
     host: 'localhost',
     port: 5432,
     database: 'Catastro'
-})
+});
 }
-export {coneccion};
+export {conexion};
