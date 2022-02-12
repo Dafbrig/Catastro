@@ -1,6 +1,6 @@
-import { connect } from "http2";
-import { NextApiRequest,NextApiResponse } from "next"
-import { conexion } from "../../utiles/database"; 
+import { NextApiRequest,NextApiResponse } from "next";
+import { conexion } from "../../utiles/database";
+
 export default async (req:NextApiRequest, res:NextApiResponse) =>{
     const {method, body}=req;
 
