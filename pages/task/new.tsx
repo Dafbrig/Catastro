@@ -8,9 +8,7 @@ export default function newPage(){
         Area_Total:'',
         Direccion:''
     })
-    const handleChange = (e:ChangeEvent) => {
-
-    }
+    const handleChange = ({target: {name, value},}: ChangeEvent<HTMLInputElement>) => setTask({...task,[name]:value})
     return (
         <div>
             <Card.Content>
@@ -21,15 +19,15 @@ export default function newPage(){
                     </Form.Field>
                     <Form.Field>
                     <label htmlFor="Num_Pisos">Numero de Pisos</label>
-                    <input type="text" placeholder="Poner los pisos de la construccion" name="Num_Pisos" />
+                    <input type="text" placeholder="Poner los pisos de la construccion" name="Num_Pisos" onChange={handleChange}/>
                     </Form.Field>
                     <Form.Field>
                     <label htmlFor="Area_Total">Area Total de la construccion</label>
-                    <input type="text" placeholder="Poner el Area Total de la construccion" name="Area_Total" />
+                    <input type="text" placeholder="Poner el Area Total de la construccion" name="Area_Total" onChange={handleChange}/>
                     </Form.Field>
                     <Form.Field>
                     <label htmlFor="Direccion">Direccion de la construccion</label>
-                    <input type="text" placeholder="Poner la direccion de la construccion" name="Direccion" />
+                    <input type="text" placeholder="Poner la direccion de la construccion" name="Direccion" onChange={handleChange}/>
                     </Form.Field>
                     <button>
                         Guardar
