@@ -1,4 +1,5 @@
 import {Task} from './interfaces/Task'
+
 interface props{
   task:Task[]
 }

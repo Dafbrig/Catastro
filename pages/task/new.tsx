@@ -1,5 +1,7 @@
 import {Card, Form, Button} from 'semantic-ui-react'
 import { ChangeEvent, useState } from 'react'
+import { json } from 'stream/consumers'
+import { Task } from 'pages/interfaces/Task'
 
 export default function newPage(){
     const [task, setTask] = useState({
@@ -8,11 +10,20 @@ export default function newPage(){
         Area_Total:'',
         Direccion:''
     })
-    const handleChange = ({target: {name, value},}: ChangeEvent<HTMLInputElement>) => setTask({...task,[name]:value})
+    const handleChange = ({target: {name, value},}: ChangeEvent<HTMLInputElement|HTMLAreaElement>) => setTask({...task,[name]:value})
+    const createTask=async(task:Task)=>{const await fetch('http://localhost:3000/api/task',{method='POST',headers={'Content-Type':'aplication/json'},body: JSON.stringify(task)})}
+    const handleSumbit =async (e:FormEvent<HTMLFormElement)=>{e.preventDefault();
+    try {
+        await createTask(task)
+        
+    } catch (error) {
+        console.log(error);
+    }
+}
     return (
         <div>
             <Card.Content>
-                <Form>
+                <Form onSubmit={handleSumbit}>
                     <Form.Field>
                         <label htmlFor="Cod_Cons">Codigo de Construccion</label>
                         <input type="text" placeholder="Escribir Codigo de construccion" name="Cod_Cons" onChange={handleChange}/>
