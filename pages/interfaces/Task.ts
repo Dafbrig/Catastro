@@ -3,5 +3,5 @@ export interface Task{
     Num_Pisos: String;
     Area_Total: String;
     Direccion: String;
-       
+    
 }
