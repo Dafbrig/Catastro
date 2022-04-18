@@ -8,27 +8,40 @@ Presentar una lista con los recursos disponibles
 
 El país se ha aventurado en un nuevo modelo para administrar su catastro. En este Catastro, al
 igual que en la versión anterior, el centro de todo es el Predio.
+
 El predio se compone de un numero predial, que lo identifica de manera inequívoca a nivel
 nacional, avalúo, nombre, departamento y municipio.
+
 Entrevista con un funcionario de catastro:
+
 Funcionario: El sistema debe registrar la información de todos los predios de un municipio, es
 necesario modificar su información y también eliminarlos. Pero el predio tiene más cosas que
 están asociadas a él: tiene propietarios, construcciones y puede tener un terreno.
+
 Entrevistador: ¿El predio siempre tiene un terreno?
+
 Funcionario: No, puede pasar que el predio sólo tenga construcciones.
+
 Entrevistador: ¿Qué información tienen los propietarios?
+
 Funcionario: Hay propietarios dos tipos: Personas Naturales y Personas Jurídicas. Las personas
 naturales deben tener tipo de documento, el número del documento, nombres y apellidos; los
 otros tienen el NIT y la razón social. Ambos deben tener dirección, teléfono y pueden tener un
 correo electrónico.
+
 Entrevistador: ¿Y las construcciones y los terrenos?
+
 Funcionario: Las construcciones tienen el número de pisos, el área total, si la construcción es
 industrial, comercial o residencial y la dirección de la construcción. Los terrenos tienen el área, el
 valor comercial, si está cerca de fuentes de agua, si es un terreno rural o urbano y si tiene
 construcciones en él.
+
 Entrevistador: Entonces, ¿un predio puede tener más de un terreno?
+
 Funcionario: No. Un predio puede tener muchas construcciones, pero sólo un terreno.
+
 Entrevistador: ¿Qué es lo que debería poder hacer el sistema?
+
 Funcionario: Debe poder hacer la inscripción, edición y eliminación de un predio, se deben poder
 ver, crear, modificar y eliminar sus propietarios, construcciones y su terreno si lo tiene. ¡Aahh!,
 evidentemente, también se deben ver los predios que ya estén registrados.
