@@ -8,7 +8,7 @@ interface Props{
 }
 
 function TaskList({tasks}:Props) {
-  return <Card.Group itemsPerRow={1}>
+  return <Card.Group>
       {tasks.map(task =>(
           <Card key={task.Cod_Cons}>
               <Card.Content>

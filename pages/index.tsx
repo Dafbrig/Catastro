@@ -2,14 +2,16 @@ import {Task} from './interfaces/Task'
 import {Grid,Button, GridColumn} from 'semantic-ui-react'
 import {Router, useRouter} from 'next/router'
 import TaskList from './components/task/TaskList';
+import Layout from './components/Layout';
+
 interface Props{
-  task:Task[]
+  tasks:Task[]
 }
-export default function IndexPage({task}: Props){
+export default function IndexPage({tasks}: Props){
   const router = useRouter()
   return(
-    <>
-    {task.length==0 ? (
+    <Layout>
+    {tasks.length==0 ? (
       <Grid columns={3} centered verticalAlign='middle' style={{height:"50%"}}>
         <Grid.Row>
           <Grid.Column>
@@ -19,9 +21,9 @@ export default function IndexPage({task}: Props){
         </Grid.Row>
       </Grid>
     ):(
-      <TaskList tasks={task}/>
+      <TaskList tasks={tasks}/>
     )}
-    </>
+    </Layout>
   );
 }
 

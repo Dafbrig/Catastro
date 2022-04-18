@@ -2,6 +2,7 @@ import {Card, Form, Button} from 'semantic-ui-react'
 import { ChangeEvent, FormEvent, useState } from 'react'
 import { Task } from 'pages/interfaces/Task'
 import router, {useRouter} from 'next/router'
+import Layout from 'pages/components/Layout'
 
 export default function newPage(){
     const [task, setTask] = useState({
@@ -10,6 +11,7 @@ export default function newPage(){
         Area_Total:'',
         Direccion:''
     })
+    const router =useRouter();
     const handleChange = ({target: {name, value},}: ChangeEvent<HTMLInputElement|HTMLAreaElement>) => setTask ({...task,[name]:value})
     const createTask=async(task:Task)=>{ await fetch('http://localhost:3000/api/task',{method:'POST',headers:{'Content-Type':'aplication/json'},body: JSON.stringify(task)})}
     const handleSumbit =async (e: FormEvent<HTMLFormElement>)=>{
@@ -22,7 +24,7 @@ export default function newPage(){
     }
 }
     return (
-        <div>
+        <Layout>
             <Card.Content>
                 <Form onSubmit={handleSumbit}>
                     <Form.Field>
@@ -44,6 +46,6 @@ export default function newPage(){
                     <button>Guardar</button>
                 </Form>
             </Card.Content>
-        </div>
+        </Layout>
     )
 }
