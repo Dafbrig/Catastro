@@ -1,7 +1,7 @@
 import {Task} from './interfaces/Task'
 import {Grid,Button, GridColumn} from 'semantic-ui-react'
 import {Router, useRouter} from 'next/router'
-import TaskList from './components/task/TaskList';
+import TaskList from './api/tasks/TaskList';
 import Layout from './components/Layout';
 
 interface Props{
@@ -28,7 +28,7 @@ export default function IndexPage({tasks}: Props){
 }
 
 export const getServerSideProps = async () =>{
-  const res = await fetch('http://localhost:3000/api/task')
+  const res = await fetch('http://localhost:3000/api/tasks')
   const task = await res.json()
 
   return {

@@ -1,5 +1,5 @@
 import {Card, Form, Button, Grid, Confirm} from 'semantic-ui-react'
-import { ChangeEvent, FormEvent, useState, useEffect } from 'react'
+import React, { ChangeEvent, FormEvent, useState, useEffect } from 'react'
 import { Task } from 'pages/interfaces/Task'
 import router, {useRouter} from 'next/router'
 import Layout from 'pages/components/Layout'
@@ -15,10 +15,10 @@ export default function newPage(){
     const [openConfirm, setopenConfirm] = useState(false)
 
     const router =useRouter();
-    const handleChange = ({target: {name, value},}: ChangeEvent<HTMLInputElement|HTMLAreaElement>) => setTask ({...task,[name]:value})
+    const handleChange = ({currentTarget: {name, value},}: React.FormEvent<HTMLInputElement>) => setTask ({...task,[name]:value})
 
     
-    const createTask=async(task:Task)=>{ await fetch('http://localhost:3000/api/task',{method:'POST',headers:{'Content-Type':'aplication/json'},body: JSON.stringify(task)})}
+    const createTask=async(task:Task)=>{ await fetch('http://localhost:3000/api/tasks',{method:'POST',headers:{'Content-Type':'aplication/json'},body: JSON.stringify(task)})}
 
     const loadTask = async (id: string) => {
         const res = await fetch("http://localhost:3000/api/tasks/"+id)
