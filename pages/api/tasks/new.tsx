@@ -13,11 +13,8 @@ export default function newPage(){
     })
 
     const [openConfirm, setopenConfirm] = useState(false)
-
     const router =useRouter();
     const handleChange = ({currentTarget: {name, value},}: React.FormEvent<HTMLInputElement>) => setTask ({...task,[name]:value})
-
-    
     const createTask=async(task:Task)=>{ await fetch('http://localhost:3000/api/tasks',{method:'POST',headers:{'Content-Type':'aplication/json'},body: JSON.stringify(task)})}
 
     const loadTask = async (id: string) => {
@@ -62,7 +59,6 @@ const handleDelete = async (id: string) => {
 useEffect(()=>{
     if(typeof router.query.id === 'string') loadTask(router.query.id);
 }, [router.query])
-
     return (
         <Layout>
             <Grid centered colums={3} verticalAlign='middle' style={{height: '70%'}}>
