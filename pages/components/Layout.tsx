@@ -1,15 +1,22 @@
-import { Container } from "semantic-ui-react";
-import Navbar from "./Navbar";
+import React from 'react';
+import { Container } from 'semantic-ui-react';
+import Navbar from './Navbar';
 
-export default function Layout ({children}:{children: JSX.Element | JSX.Element[]}){
+interface Props {
+  children: React.ReactNode;
+}
+
+const Layout: React.FC<Props> = ({ children }) => {
   return (
-    <div>
+    <>
       <Navbar />
-      <main style={{background:'#212121'}}>
-        <Container style={{paddingTop:'2rem', height: '90vh'}}>
+      <main style={{ background: '#212121' }}>
+        <Container style={{ paddingTop: '2rem', height: '90vh' }}>
           {children}
         </Container>
       </main>
-    </div>
-  )
-}
+    </>
+  );
+};
+
+export default Layout;

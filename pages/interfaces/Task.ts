@@ -1,6 +1,7 @@
-export interface Task{
+export interface Task {
+    id: string;
     Cod_Cons: string;
-    Num_Pisos: String;
-    Area_Total: String;
-    Direccion: String;
-}
+    Num_Pisos: string;
+    Area_Total: string;
+    Direccion: string;
+  }  
