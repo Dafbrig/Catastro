@@ -1,4 +1,4 @@
-La prueba consiste en un sistema frontend sencillo, construido en NextJS (ReactJS) y usando
+Consiste en un sistema frontend sencillo, construido en NextJS (ReactJS) y usando
 Redux junto con GraphQL, que haga un pequeño CRUD sobre los recursos.
 Es decir, que permita:
 Crear un recurso
